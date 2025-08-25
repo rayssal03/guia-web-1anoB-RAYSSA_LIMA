@@ -3,36 +3,70 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Site Educativo - HTML, CSS e JavaScript</title>
+  <title>Guia Profissional de Desenvolvimento Web</title>
 </head>
 <body>
 
-  <h1>Aprenda HTML, CSS e JavaScript</h1>
-  <p>Os três pilares da web moderna</p>
+  <!-- Header com logo e menu -->
+  <header> <!--Representa o cabeçalho de uma página/ seção.-->
+    <nav> <!--Define um conjunto de links de navegação.-->
+      <h1>Guia Profissional de Desenvolvimento Web</h1> 
+      <button aria-label="Abrir menu">☰</button>
+      <ul>
+        <li><a href="#html">HTML</a></li>
+        <li><a href="#css">CSS</a></li>
+        <li><a href="#js">JavaScript</a></li>
+      </ul>
+    </nav>
+  </header>
 
-  <h2>O que é HTML?</h2>
-  <p>
-    <strong>HTML</strong> (HyperText Markup Language) é a linguagem que estrutura o conteúdo de uma página web.
-    Ele organiza textos, imagens, links, tabelas e muito mais.
-    Pense no HTML como os "tijolos" que formam a base da casa.
-  </p>
+  <main>
+    <!-- Hero -->
+    <section aria-labelledby="hero-title">
+      <h2 id="hero-title">Construa a web do zero</h2>
+      <p>Aprenda os fundamentos que movem a internet: HTML, CSS e JavaScript.</p>
+      <a href="#conteudo">Começar</a>
+    </section>
 
-  <h2>O que é CSS?</h2>
-  <p>
-    <strong>CSS</strong> (Cascading Style Sheets) é a linguagem que define a aparência do conteúdo em HTML.
-    Ele controla cores, fontes, espaçamentos, tamanhos e o layout da página.
-    O CSS é como a "decoração da casa".
-  </p>
+    <!-- Seção explicativa -->
+    <section id="conteudo" aria-labelledby="intro-title">
+      <h2 id="intro-title">O que é HTML, CSS e JavaScript?</h2>
 
-  <h2>O que é JavaScript?</h2>
-  <p>
-    <strong>JavaScript</strong> é a linguagem de programação que dá interatividade à página.
-    Com ele, é possível criar menus dinâmicos, animações, jogos e até aplicativos completos no navegador.
-    O JavaScript é como a "eletricidade" que dá vida à casa.
-  </p>
+      <!-- Card HTML -->
+      <article id="html">
+        <h3>HTML</h3>
+        <p>Linguagem de marcação usada para estruturar conteúdo na web.</p>
+        <pre><code>&lt;h1&gt;Olá, mundo!&lt;/h1&gt;</code></pre>
+        <p>Use para estruturar textos, imagens, links e tabelas.</p>
+      </article>
 
-  <hr>
-  <p><em>Site Educativo - Criado para ensinar os fundamentos da web 🚀</em></p>
+      <!-- Card CSS -->
+      <article id="css">
+        <h3>CSS</h3>
+        <p>Linguagem de estilos que define a aparência do HTML.</p>
+        <pre><code>h1 { color: blue; }</code></pre>
+        <p>Use para cores, fontes, espaçamentos e layouts.</p>
+      </article>
+
+      <!-- Card JS -->
+      <article id="js">
+        <h3>JavaScript</h3>
+        <p>Linguagem de programação que dá interatividade às páginas.</p>
+        <pre><code>alert("Olá, mundo!");</code></pre>
+        <p>Use para criar animações, validações e aplicativos dinâmicos.</p>
+      </article>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2025 Guia Profissional de Desenvolvimento Web</p>
+    <nav>
+      <a href="#html">HTML</a> |
+      <a href="#css">CSS</a> |
+      <a href="#js">JavaScript</a>
+    </nav>
+  </footer>
 
 </body>
 </html>
