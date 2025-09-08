@@ -8,16 +8,18 @@
 <body>
 
   <!-- Header com logo e menu -->
-  <header> <!--Representa o cabeçalho de uma página/ seção.-->
-    <nav> <!--Define um conjunto de links de navegação.-->
-      <h1>Guia Profissional de Desenvolvimento Web</h1> 
-      <button aria-label="Abrir menu">☰</button>
-      <ul>
-        <li><a href="#html">HTML</a></li>
-        <li><a href="#css">CSS</a></li>
-        <li><a href="#js">JavaScript</a></li>
+  <header role="banner"> <!--Representa o cabeçalho de uma página/ seção.-->
+    <h1>Guia Profissional de Desenvolvimento Web</h1>
+    <nav role="navigation" aria-label="Menu principal"> <!--Define um conjunto de links de navegação.-->
+      <button aria-controls="menu-list" aria-expanded="false">☰ Menu</button>
+      <ul id="menu-list">
+        <li><a href="#hero">Home</a></li>
+        <li><a href="#conteudo">O que é HTML, CSS e JS?</a></li>
+        <li><a href="#boas-praticas">Boas práticas</a></li>
+        <li><a href="#contato">Contato</a></li>
       </ul>
     </nav>
+    <a href="#main-content" class="skip-link">Ir para o conteúdo principal</a>
   </header>
 
   <main>
@@ -58,15 +60,410 @@
     </section>
   </main>
 
+
+
+  <!-- Main -->
+  <main id="main-content" role="main">
+
+    <!-- Hero -->
+    <section id="hero" aria-labelledby="hero-title">
+      <h2 id="hero-title">Construa a web do zero</h2>
+      <p>Aprenda os fundamentos que movem a internet: HTML, CSS e JavaScript.</p>
+      <a href="#conteudo">Começar</a>
+    </section>
+
+    <!-- Seção: O que é HTML, CSS e JS? (resumo / cards já existentes) -->
+    <section id="conteudo" aria-labelledby="intro-title">
+      <h2 id="intro-title">O que é HTML, CSS e JavaScript?</h2>
+
+      <article id="html" aria-labelledby="html-title">
+        <h3 id="html-title">HTML</h3>
+        <p>HTML (HyperText Markup Language) estrutura o conteúdo da página: títulos, parágrafos, imagens e links.</p>
+        <pre><code>&lt;h1&gt;Olá, mundo!&lt;/h1&gt;</code></pre>
+        <p>Quando usar: sempre que precisar representar conteúdo, textos, listas, tabelas e links.</p>
+      </article>
+
+      <article id="css" aria-labelledby="css-title">
+        <h3 id="css-title">CSS</h3>
+        <p>CSS (Cascading Style Sheets) define a aparência: cores, fontes, espaçamento e layout.</p>
+        <pre><code>h1 { font-size: 2rem; }</code></pre>
+        <p>Quando usar: para estilizar e criar responsividade visual da interface.</p>
+      </article>
+
+      <article id="js" aria-labelledby="js-title">
+        <h3 id="js-title">JavaScript</h3>
+        <p>JavaScript adiciona interatividade: manipula comportamento e responde a ações do usuário.</p>
+        <pre><code>document.querySelector('button').addEventListener('click', () =&gt; alert('Olá'));</code></pre>
+        <p>Quando usar: para validações, requisições de dados, animações e lógica de aplicação.</p>
+      </article>
+    </section>
+
+    <!-- NOVA SEÇÃO: Boas práticas profissionais -->
+    <section id="boas-praticas" aria-labelledby="bp-title">
+      <h2 id="bp-title">Boas práticas profissionais</h2>
+
+      <!-- Acessibilidade -->
+      <article id="acessibilidade" aria-labelledby="acc-title">
+        <h3 id="acc-title">Acessibilidade (a11y)</h3>
+        <p>
+          Acessibilidade significa garantir que pessoas com diferentes capacidades consigam usar seu site:
+          leitores de tela, navegação por teclado, contraste adequado e texto alternativo para imagens.
+        </p>
+
+        <h4>Exemplo prático</h4>
+        <pre><code>&lt;img src="foto-equipe.jpg" alt="Equipe do projeto reunida em mesa redonda"&gt;
+&lt;button aria-label="Abrir menu de navegação"&gt;☰&lt;/button&gt;
+&lt;a href="#main-content"&gt;Ir para o conteúdo principal&lt;/a&gt;</code></pre>
+
+        <h4>Dicas rápidas</h4>
+        <ul>
+          <li>Inclua <code>alt</code> descritivo em todas as imagens informativas.</li>
+          <li>Use elementos nativos (botões, links) quando possível — já trazem acessibilidade por padrão.</li>
+          <li>Garanta foco visível e ordem lógica de tabulação (use <code>tabindex</code> apenas quando necessário).</li>
+          <li>Forneça textos alternativos e legendas para mídia.</li>
+        </ul>
+      </article>
+
+      <!-- Semântica -->
+      <article id="semantica" aria-labelledby="sem-title">
+        <h3 id="sem-title">Semântica</h3>
+        <p>
+          Marcação semântica melhora a legibilidade do código e a experiência de ferramentas (SEO, leitores de tela).
+          Use <code>&lt;header&gt;</code>, <code>&lt;nav&gt;</code>, <code>&lt;main&gt;</code>, <code>&lt;section&gt;</code>, <code>&lt;article&gt;</code> e <code>&lt;footer&gt;</code> corretamente.
+        </p>
+
+        <h4>Exemplo prático</h4>
+        <pre><code>&lt;main&gt;
+  &lt;section&gt;
+    &lt;article&gt;
+      &lt;h2&gt;Título do artigo&lt;/h2&gt;
+      &lt;p&gt;Conteúdo...&lt;/p&gt;
+    &lt;/article&gt;
+  &lt;/section&gt;
+&lt;/main&gt;</code></pre>
+
+        <h4>Dicas rápidas</h4>
+        <ul>
+          <li>Use <code>&lt;article&gt;</code> para conteúdos independentes (ex.: posts, tutoriais).</li>
+          <li>Use <code>&lt;section&gt;</code> quando for uma divisão temática da página.</li>
+          <li>Evite usar <code>&lt;div&gt;</code> quando houver um elemento semântico adequado.</li>
+        </ul>
+      </article>
+
+      <!-- Responsividade -->
+      <article id="responsividade" aria-labelledby="resp-title">
+        <h3 id="resp-title">Responsividade</h3>
+        <p>
+          Responsividade garante que o site funciona bem em telas de diferentes tamanhos:
+          mobile-first, imagens adaptativas e layouts fluidos.
+        </p>
+
+        <h4>Exemplo prático (imagem responsiva)</h4>
+        <pre><code>&lt;picture&gt;
+  &lt;source media="(min-width:800px)" srcset="banner-large.jpg"&gt;
+  &lt;source media="(min-width:400px)" srcset="banner-medium.jpg"&gt;
+  &lt;img src="banner-small.jpg" alt="Banner do curso de desenvolvimento web"&gt;
+&lt;/picture&gt;</code></pre>
+
+        <h4>Dicas rápidas</h4>
+        <ul>
+          <li>Projete pensando primeiro em mobile (mobile-first).</li>
+          <li>Use unidades relativas (%, rem, em) para tamanhos quando for estilizar com CSS.</li>
+          <li>Implemente imagens responsivas (<code>&lt;picture&gt;</code>, <code>srcset</code>).</li>
+        </ul>
+      </article>
+
+      <!-- Organização do projeto -->
+      <article id="organizacao" aria-labelledby="org-title">
+        <h3 id="org-title">Organização do projeto</h3>
+        <p>
+          Estrutura clara de pastas e padrões de nomes facilitam colaboração e manutenção.
+          Mantenha assets organizados e módulos/componentes bem separados.
+        </p>
+
+        <h4>Exemplo de estrutura</h4>
+        <pre><code>meu-projeto/
+├─ index.html
+├─ README.md
+├─ src/
+│  ├─ components/
+│  ├─ pages/
+│  └─ main.js
+├─ public/
+│  ├─ images/
+│  └─ fonts/
+└─ .gitignore</code></pre>
+
+        <h4>Dicas rápidas</h4>
+        <ul>
+          <li>Documente o projeto (README com setup, comandos e padrões).</li>
+          <li>Use convenções de nomes consistentes (kebab-case, camelCase, etc.).</li>
+          <li>Separe responsabilidades: HTML (estrutura), CSS (estilo), JS (comportamento).</li>
+        </ul>
+      </article>
+
+      <!-- Versionamento -->
+      <article id="versionamento" aria-labelledby="git-title">
+        <h3 id="git-title">Versionamento (Git)</h3>
+        <p>
+          Versionamento guarda histórico do código, permite colaboração e reversão de mudanças.
+          Git + plataforma remota (GitHub/GitLab/Bitbucket) é o padrão.
+        </p>
+
+        <h4>Exemplo prático — comandos básicos</h4>
+        <pre><code># inicializar repositório
+git init
+
+# ver status
+git status
+
+# adicionar arquivos
+git add .
+
+# commit com mensagem
+git commit -m "Mensagem curta e descritiva"
+
+# enviar para remoto (branch principal 'main')
+git push origin main</code></pre>
+
+        <h4>Fluxo recomendado (simples)</h4>
+        <pre><code># criar branch para feature
+git checkout -b feature/explicacao-acessibilidade
+
+# trabalhar, commitar
+git add .
+git commit -m "Adiciona seção de acessibilidade"
+
+# enviar branch e abrir Pull Request
+git push origin feature/explicacao-acessibilidade</code></pre>
+
+        <h4>Dicas rápidas</h4>
+        <ul>
+          <li>Escreva mensagens claras: verbo no presente, resumo curto + descrição opcional.</li>
+          <li>Use branches para features/bugfixes e Pull Requests para revisão.</li>
+          <li>Inclua um <code>.gitignore</code> para não versionar arquivos gerados (build, node_modules).</li>
+        </ul>
+      </article>
+
+    </section>
+
+    <!-- Fluxograma do Projeto Web -->
+    <section id="fluxograma" aria-labelledby="fluxo-title">
+      <h2 id="fluxo-title">Fluxograma: Da Ideia ao Deploy</h2>
+      
+      <pre role="img" aria-label="Fluxograma do processo de desenvolvimento web">
+┌─────────────┐     ┌──────────────┐     ┌─────────────┐     ┌────────────────┐
+│   1.IDEIA   │ ──> │2.PLANEJAMENTO│ ──> │  3.DESIGN   │ ──> │4.DESENVOLVIMENTO│
+└─────────────┘     └──────────────┘     └─────────────┘     └────────────────┘
+                                                                      │
+┌─────────────┐     ┌──────────────┐     ┌─────────────┐            │
+│  8.SUCESSO  │ <── │  7.DEPLOY    │ <── │6.OTIMIZAÇÃO │ <── ┌──────┘
+└─────────────┘     └──────────────┘     └─────────────┘     │
+      │                                                       │
+      │                                                       │
+      └───────────> ┌──────────────┐ <─────────────────────┐ │
+                    │  5.TESTES    │ <─────────────────────┼─┘
+                    └──────────────┘                       │
+                           │                               │
+                           └───────────────────────────────┘
+                              (Ciclo de Melhorias)
+      </pre>
+
+      <!-- Legenda do Fluxograma -->
+      <div role="complementary" aria-label="Legenda do fluxograma">
+        <h3>Etapas do Processo:</h3>
+        <ol>
+          <li><strong>Ideia:</strong> Concepção, pesquisa de mercado, validação inicial</li>
+          <li><strong>Planejamento:</strong> Escopo, arquitetura, tecnologias, cronograma</li>
+          <li><strong>Design:</strong> UI/UX, protótipos, guia de estilo</li>
+          <li><strong>Desenvolvimento:</strong> Código, APIs, banco de dados</li>
+          <li><strong>Testes:</strong> Unitários, integração, usabilidade</li>
+          <li><strong>Otimização:</strong> Performance, SEO, acessibilidade</li>
+          <li><strong>Deploy:</strong> Publicação, monitoramento, backup</li>
+          <li><strong>Sucesso:</strong> Métricas, feedback, melhorias contínuas</li>
+        </ol>
+
+        <p><strong>Observação:</strong> O ciclo de melhorias (representado pelas setas de retorno) indica que o processo é iterativo e contínuo.</p>
+      </div>
+    </section>
+
+    <!-- Contato / recursos -->
+    <section id="contato" aria-labelledby="contact-title">
+      <h2 id="contact-title">Recursos e contato</h2>
+      <p>Tem dúvidas? Abra uma issue no repositório ou envie um e-mail para equipe@exemplo.com.</p>
+      <p>Recursos recomendados:</p>
+      <ul>
+        <li><a href="https://developer.mozilla.org/" target="_blank" rel="noopener">MDN Web Docs</a></li>
+        <li><a href="https://www.w3.org/WAI/" target="_blank" rel="noopener">WAI - Acessibilidade</a></li>
+      </ul>
+    </section>
+
+  </main>
+
+  <!-- Seção: Panorama de Tecnologias Web -->
+<section id="panorama" aria-labelledby="panorama-title">
+  <h2 id="panorama-title">Panorama de Tecnologias Web</h2>
+  <p>
+    O desenvolvimento web envolve diversas áreas. Cada uma possui ferramentas e responsabilidades próprias.
+    Entender o panorama ajuda a escolher melhor por onde começar ou qual caminho seguir.
+  </p>
+
+  <!-- Front-end -->
+  <article id="frontend" aria-labelledby="frontend-title">
+    <h3 id="frontend-title">Front-end</h3>
+    <p>
+      O front-end é a parte do sistema que o usuário vê e interage: interfaces gráficas, botões, formulários, menus.
+    </p>
+    <h4>Tecnologias comuns</h4>
+    <ul>
+      <li>HTML, CSS, JavaScript</li>
+      <li>Frameworks: React, Angular, Vue</li>
+    </ul>
+    <h4>Exemplo mínimo</h4>
+    <pre><code>&lt;button onclick="alert('Olá!')"&gt;Clique aqui&lt;/button&gt;</code></pre>
+  </article>
+
+  <!-- Back-end -->
+  <article id="backend" aria-labelledby="backend-title">
+    <h3 id="backend-title">Back-end</h3>
+    <p>
+      O back-end é a lógica de negócio, que roda no servidor. Ele recebe requisições, processa dados e devolve respostas.
+    </p>
+    <h4>Tecnologias comuns</h4>
+    <ul>
+      <li>Node.js (JavaScript), Java (Spring), Python (Django/Flask), PHP (Laravel), C# (.NET)</li>
+      <li>APIs REST, GraphQL</li>
+    </ul>
+    <h4>Exemplo mínimo (Node.js)</h4>
+    <pre><code>const http = require('http');
+http.createServer((req, res) =&gt; {
+  res.end('Olá do servidor!');
+}).listen(3000);</code></pre>
+  </article>
+
+  <!-- Bancos de dados -->
+  <article id="bancos" aria-labelledby="bancos-title">
+    <h3 id="bancos-title">Bancos de Dados</h3>
+    <p>
+      Os bancos armazenam as informações do sistema. Podem ser relacionais (tabelas) ou não-relacionais (documentos, grafos).
+    </p>
+    <h4>Tecnologias comuns</h4>
+    <ul>
+      <li>Relacionais: MySQL, PostgreSQL, SQL Server</li>
+      <li>NoSQL: MongoDB, Redis, Cassandra</li>
+    </ul>
+    <h4>Exemplo mínimo (SQL)</h4>
+    <pre><code>CREATE TABLE usuarios (
+  id INT PRIMARY KEY,
+  nome VARCHAR(100)
+);</code></pre>
+  </article>
+
+  <!-- DevOps -->
+  <article id="devops" aria-labelledby="devops-title">
+    <h3 id="devops-title">DevOps</h3>
+    <p>
+      DevOps integra desenvolvimento e operações: automação de deploy, infraestrutura como código,
+      integração contínua (CI) e entrega contínua (CD).
+    </p>
+    <h4>Tecnologias comuns</h4>
+    <ul>
+      <li>Docker, Kubernetes</li>
+      <li>CI/CD: GitHub Actions, GitLab CI, Jenkins</li>
+      <li>Infraestrutura: AWS, Azure, Google Cloud</li>
+    </ul>
+    <h4>Exemplo mínimo (Dockerfile)</h4>
+    <pre><code>FROM node:18
+COPY . /app
+WORKDIR /app
+RUN npm install
+CMD ["npm", "start"]</code></pre>
+  </article>
+
+  <!-- Testes -->
+  <article id="testes" aria-labelledby="testes-title">
+    <h3 id="testes-title">Testes</h3>
+    <p>
+      Testes garantem a qualidade e evitam erros. Podem ser unitários, de integração, funcionais ou automatizados.
+    </p>
+    <h4>Tecnologias comuns</h4>
+    <ul>
+      <li>Front-end: Jest, Cypress</li>
+      <li>Back-end: Mocha, JUnit, PyTest</li>
+    </ul>
+    <h4>Exemplo mínimo (JavaScript com Jest)</h4>
+    <pre><code>test('soma 2 + 2 = 4', () =&gt; {
+  expect(2 + 2).toBe(4);
+});</code></pre>
+  </article>
+
+  <!-- Como escolher -->
+  <article id="escolha" aria-labelledby="escolha-title">
+    <h3 id="escolha-title">Como escolher seu caminho?</h3>
+    <ul>
+      <li>Se gosta de design e experiência do usuário → invista em <strong>Front-end</strong>.</li>
+      <li>Se prefere lógica e processamento de dados → siga para <strong>Back-end</strong>.</li>
+      <li>Se curte dados e performance → estude <strong>Bancos de Dados</strong>.</li>
+      <li>Se gosta de automação e infraestrutura → explore <strong>DevOps</strong>.</li>
+      <li>Se tem perfil detalhista e qualidade → foque em <strong>Testes</strong>.</li>
+    </ul>
+    <p>
+      Muitas vezes, desenvolvedores acabam sendo <strong>Full Stack</strong> (atuando no front e back-end), mas
+      é importante ter uma base sólida antes de expandir.
+    </p>
+  </article>
+</section>
+
   <!-- Footer -->
-  <footer>
-    <p>&copy; 2025 Guia Profissional de Desenvolvimento Web</p>
-    <nav>
-      <a href="#html">HTML</a> |
-      <a href="#css">CSS</a> |
-      <a href="#js">JavaScript</a>
-    </nav>
+  <footer role="contentinfo">
+    <div class="footer-content">
+      <!-- Navegação principal -->
+      <nav aria-label="Links principais do rodapé">
+        <h3>Navegação</h3>
+        <ul>
+          <li><a href="#hero">Home</a></li>
+          <li><a href="#conteudo">HTML, CSS e JS</a></li>
+          <li><a href="#boas-praticas">Boas Práticas</a></li>
+          <li><a href="#panorama">Panorama Tech</a></li>
+        </ul>
+      </nav>
+
+      <!-- Links de tecnologias -->
+      <nav aria-label="Links de tecnologias">
+        <h3>Tecnologias</h3>
+        <ul>
+          <li><a href="#frontend">Front-end</a></li>
+          <li><a href="#backend">Back-end</a></li>
+          <li><a href="#bancos">Bancos de Dados</a></li>
+          <li><a href="#devops">DevOps</a></li>
+        </ul>
+      </nav>
+
+      <!-- Recursos -->
+      <section class="footer-resources">
+        <h3>Recursos</h3>
+        <ul>
+          <li><a href="https://developer.mozilla.org/" target="_blank" rel="noopener">MDN Web Docs</a></li>
+          <li><a href="https://www.w3.org/WAI/" target="_blank" rel="noopener">WAI - Acessibilidade</a></li>
+          <li><a href="#contato">Fale Conosco</a></li>
+        </ul>
+      </section>
+
+      <!-- Redes Sociais -->
+      <section class="social-media">
+        <h3>Redes Sociais</h3>
+        <ul>
+          <li><a href="https://github.com/rayssal03" target="_blank" rel="noopener" aria-label="GitHub">GitHub</a></li>
+        </ul>
+      </section>
+    </div>
+
+    <!-- Copyright -->
+    <div class="copyright">
+      <p>&copy; 2025 Guia Profissional de Desenvolvimento Web. Todos os direitos reservados.</p>
+    </div>
   </footer>
+
 
 </body>
 </html>
